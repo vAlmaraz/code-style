@@ -38,6 +38,11 @@ rough priority order):
 public static final PREFERENCES_USER_NAME = "PREFERENCES_USER_NAME";
 ```
 
+#### Methods
+
+ * Choose where do you like to put open bracket (same line method definition or next line). Use the same standart to every method!
+ * If you like open bracket same line, keep a white space between parameters and bracket.
+
 #### Spaces
 
  * Use spaces like natural writing: respect spaces between words and operators. Ex:
@@ -56,7 +61,9 @@ public function analyzeAnArray($theArray, $someFlag, $anotherFlag = true) {
     // The code
 }
 // Instead of this
-$oneAwesomeArray=array('foo'=>'bar');
+public function analyzeAnArray($theArray,$someFlag,$anotherFlag=true){
+    // The code
+}
 ```
 
 #### Comments
@@ -66,7 +73,7 @@ $oneAwesomeArray=array('foo'=>'bar');
 ```java
 // The explanation
 ```
- * Remember adding javadoc for complex or critical methods. Write final dots as natural language. Keep one line separation between method explanation and parameter descriptions. Use html format to highlight important quotes. Add website and local links if needed. Ex:
+ * Remember adding javadoc for complex or critical methods. I recommend writing final dots as natural language. Keep one line separation between method explanation and parameter descriptions. Use html format to highlight important quotes. Add website and local links if needed. Ex:
 ```java
 /**
  * The method explanation. <strong>Important note</strong>. Referenced here:
@@ -76,10 +83,11 @@ $oneAwesomeArray=array('foo'=>'bar');
  * @param int param2 The param2 description.
  * @return int The result description.
  */
-public function int myCriticalMethod(int param1, int param2) {
+public int myCriticalMethod(int param1, int param2) {
     return param1 + param2;
 }
 ```
+ * Use them to describe the reason why you write the code, not what you are doing (any programmer could understand what are you doing but not why you did or choose that solution).
 
 ### Return and break early
 
@@ -101,7 +109,7 @@ if (myArray.isEmpty()) {
 // Code
 ```
 
-It is very important when writing a method with several validation block of codes. Real code execution and result should be at the final of the method. Ex:
+It is very important when writing a method with several validation block of codes. Real code execution and result should be at the end of the method. Ex:
 
 ```java
 public int calculateAValue(Integer arg1, Integer arg2) {
@@ -125,7 +133,7 @@ public int calculateAValue(Integer arg1, Integer arg2) {
 Use only one return inside a method, even using switchs and ifs. Ex:
 
 ```java
-public function int calculateSomething(int arg1, int arg2) {
+public int calculateSomething(int arg1, int arg2) {
     // Initialize return variable with default value
     int result = 0;
     // Perform operations
