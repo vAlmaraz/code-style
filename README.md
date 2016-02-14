@@ -73,6 +73,21 @@ public function analyzeAnArray($theArray,$someFlag,$anotherFlag=true){
 ```java
 // The explanation
 ```
+ * Use them to describe the reason why you write the code, not what you are doing (any programmer could understand what are you doing but not why you did or choose that solution).
+ * Write comments over the block of code you want to explain, not in the same line.
+For example, use this:
+```java
+// If user is allowed to edit resources and the resource is not blocked
+if (user.couldEditResources() && !resource.isBlocked()) {
+    // The code
+}
+```
+Instead of this.
+```java
+if (user.couldEditResources() && !resource.isBlocked()) { // If user is allowed to edit resources and the resource is not blocked
+    // The code
+}
+```
  * Remember adding javadoc for complex or critical methods. I recommend writing final dots as natural language. Keep one line separation between method explanation and parameter descriptions. Use html format to highlight important quotes. Add website and local links if needed. Ex:
 ```java
 /**
@@ -87,7 +102,6 @@ public int myCriticalMethod(int param1, int param2) {
     return param1 + param2;
 }
 ```
- * Use them to describe the reason why you write the code, not what you are doing (any programmer could understand what are you doing but not why you did or choose that solution).
 
 ### Return and break early
 
