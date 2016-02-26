@@ -16,6 +16,7 @@ rough priority order):
 
  * Use IDE default configuration, instead of your preferences, to be able to setup the source code in any other environment.
  * If there are multiple IDEs (developing for PHP, using Eclipse, Netbeans, PHPStorm...), use tabs, not spaces. Configure tab size as you wish, so other developers could choose their own tab size without modifying source code.
+ * When writing XML files (like Android layouts), use the auto-indent tool to sort attributes and indent nodes.
 
 #### Whitespace
 
@@ -28,6 +29,7 @@ rough priority order):
  * Choose a good name, one that accurately describes the use of the variable.
  * The bigger the variable scope is, the larger the name should be.
  * Use language conventions. If not, choose camelCase naming convention.
+ * When naming UI widgets, like TextView, UILabel..., use first two letters (if possible) to design the type, and choose the use of the widget. For example: tvUserName or lbPlaceAddress.
 
 #### Constants
 
@@ -42,6 +44,12 @@ public static final PREFERENCES_USER_NAME = "PREFERENCES_USER_NAME";
 
  * Choose where do you like to put open bracket (same line method definition or next line). Use the same standart to every method!
  * If you like open bracket same line, keep a white space between parameters and bracket.
+
+#### Method parameters
+
+ * Parameters should be ordered by importance or usage.
+ * In PHP or similar languages, optional parameters should be the last ones.
+ * In Android, if you need to send Context, set it as the first one. Callbacks should be at the end.
 
 #### Spaces
 
@@ -144,7 +152,7 @@ public int calculateAValue(Integer arg1, Integer arg2) {
 }
 ```
 
-Use only one return inside a method, even using switchs and ifs. Ex:
+Use only one return inside a method, even using switchs and ifs, when you are not validating input. Ex:
 
 ```java
 public int calculateSomething(int arg1, int arg2) {
@@ -171,13 +179,23 @@ public int calculateSomething(int arg1, int arg2) {
  1. Public constants should be at the beginning of the class
  2. Protected constants
  3. Private constants
- 4. Protected attributes
- 5. Public attributes
+ 4. Public attributes
+ 5. Protected attributes
  6. Private attributes
  7. Static instance constructors
  8. Constructors
- 9. Overriden methods
+ 9. Overriden methods (including lifecycle methods, interface or protocol implementations...)
  10. Public methods
  11. Protected methods
  12. Private methods
 
+#### Paths and directories
+
+When you have to define the path of a directory, it should finish with a file separator. Example:
+
+```php
+$filesPath = '/var/app/files/';
+```
+
+This way, when you have to contact a directory path with a file name, you don't have to add a file separator.
+When you are working with directory paths, you know all of them finish with the separator.
