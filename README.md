@@ -12,26 +12,35 @@ rough priority order):
 
 ----
 
-#### Indent style
+## Index
+
+- [Coding convenctions](## Coding conventions)
+- [Databases](## Databases)
+
+----
+
+## Coding conventions
+
+### Indent style
 
  * Use IDE default configuration, instead of your preferences, to be able to setup the source code in any other environment.
  * If there are multiple IDEs (developing for PHP, using Eclipse, Netbeans, PHPStorm...), use tabs, not spaces. Configure tab size as you wish, so other developers could choose their own tab size without modifying source code.
  * When writing XML files (like Android layouts), use the auto-indent tool to sort attributes and indent nodes.
 
-#### Whitespace
+### Whitespace
 
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
  * Don’t leave trailing whitespace.
 
-#### Variable names
+### Variable names
 
  * Choose a good name, one that accurately describes the use of the variable.
  * The bigger the variable scope is, the larger the name should be.
  * Use language conventions. If not, choose camelCase naming convention.
  * When naming UI widgets, like TextView, UILabel..., use first two letters (if possible) to design the type, and choose the use of the widget. For example: tvUserName or lbPlaceAddress.
 
-#### Constants
+### Constants
 
  * Use language conventions: Upper case in Java, k prefix in Obj-C...
  * (Java, PHP...) Underscore naming convention.
@@ -40,18 +49,18 @@ rough priority order):
 public static final PREFERENCES_USER_NAME = "PREFERENCES_USER_NAME";
 ```
 
-#### Methods
+### Methods
 
  * Choose where do you like to put open bracket (same line method definition or next line). Use the same standart to every method!
  * If you like open bracket same line, keep a white space between parameters and bracket.
 
-#### Method parameters
+### Method parameters
 
  * Parameters should be ordered by importance or usage.
  * In PHP or similar languages, optional parameters should be the last ones.
  * In Android, if you need to send Context, set it as the first one. Callbacks should be at the end.
 
-#### Spaces
+### Spaces
 
  * Use spaces like natural writing: respect spaces between words and operators. Ex:
 ```php
@@ -74,7 +83,7 @@ public function analyzeAnArray($theArray,$someFlag,$anotherFlag=true){
 }
 ```
 
-#### Comments
+### Comments
 
  * Use first capital letter when starting a comment.
  * Keep one whitespace between line comment syntax and the first word. Ex:
@@ -174,7 +183,7 @@ public int calculateSomething(int arg1, int arg2) {
 }
 ```
 
-#### Class variables and method order
+## Class variables and method order
 
  1. Public constants should be at the beginning of the class
  2. Protected constants
@@ -189,13 +198,35 @@ public int calculateSomething(int arg1, int arg2) {
  11. Protected methods
  12. Private methods
 
-#### Paths and directories
+### Paths and directories
 
 When you have to define the path of a directory, it should finish with a file separator. Example:
 
 ```php
-$filesPath = '/var/app/files/';
+$filesDirectoryPath = '/var/app/files/';
 ```
 
 This way, when you have to contact a directory path with a file name, you don't have to add a file separator.
 When you are working with directory paths, you know all of them finish with the separator.
+
+When naming path variables, you should specify if they refer to a aboslute path or the name of the folder:
+
+```php
+$filesDirectoryPath = '/var/app/files/';
+$filePath = '/var/app/files/theFile.ext';
+```
+
+## Databases
+
+### Foreign keys
+
+Use underscores to separate words.
+
+Keep a logic column order, starting with ids and finishing with timestamps.
+
+Foreign keys should be named starting at "id_", so if a table has an id and a foreign key, they could be named as following:
+
+- id
+- id_foreign_table
+
+Every column should be non null unless necessary.
