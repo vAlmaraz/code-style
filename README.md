@@ -14,8 +14,8 @@ rough priority order):
 
 ## Index
 
-- [Coding convenctions](#2coding-conventions)
-- [Databases](#-databases)
+- [Coding convenctions](#coding-conventions)
+- [Databases](#databases)
 
 ----
 
