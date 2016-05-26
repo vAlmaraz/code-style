@@ -230,3 +230,11 @@ Foreign keys should be named starting at "id_", so if a table has an id and a fo
 - id_foreign_table
 
 Every column should be non null unless necessary.
+
+### File sizes
+
+You should save file sizes in bytes, to avoid losing accuracy.
+
+### Dates
+
+Dates should be saved in UTC. If you need to save a specific date in local time, save also timezone in another column.
