@@ -218,18 +218,17 @@ $filePath = '/var/app/files/theFile.ext';
 
 ## Databases
 
-### Foreign keys
+### General
 
 Use underscores to separate words.
 
 Keep a logic column order, starting with ids and finishing with timestamps.
 
-Foreign keys should be named starting at "id_", so if a table has an id and a foreign key, they could be named as following:
+Every column should be non null by default unless necessary.
 
-- id
-- id_foreign_table
+### Encoding
 
-Every column should be non null unless necessary.
+Use UTF-8 encoding for every text and varchar columns.
 
 ### File sizes
 
@@ -238,3 +237,16 @@ You should save file sizes in bytes, to avoid losing accuracy.
 ### Dates
 
 Dates should be saved in UTC. If you need to save a specific date in local time, save also timezone in another column.
+
+### Foreign keys
+
+Foreign keys should be named starting at "id_", so if a table has an id and a foreign key, they could be named as following:
+
+- id
+- id_foreign_table
+
+### Indexes
+
+If you usually select data from a table looking for a specific foreign key (for example), create an index to optimize queries.
+
+Don't overload your database with indexes.
