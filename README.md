@@ -16,6 +16,7 @@ rough priority order):
 
 - [Coding convenctions](#coding-conventions)
 - [Databases](#databases)
+- [Git](#git)
 
 ----
 
@@ -250,3 +251,15 @@ Foreign keys should be named starting at "id_", so if a table has an id and a fo
 If you usually select data from a table looking for a specific foreign key (for example), create an index to optimize queries.
 
 Don't overload your database with indexes.
+
+## Git
+
+### Issue management
+
+- Create milestones when you want to release a new software version.
+- Create one or more issues per feature
+- Use labels to describe issue
+- Use labels to follow progress
+- Create issues when a bug is discovered, and use labels to describe its progress
+
+Label naming: https://github.com/dotnet/roslyn/wiki/Labels-used-for-issues
