@@ -229,7 +229,7 @@ Every column should be non null by default unless necessary.
 
 ### Encoding
 
-Use UTF-8 encoding for every text and varchar columns.
+Use UTF-8 encoding for every text and varchar columns. Set it when creating a new database and ensure it is configured when adding new tables.
 
 ### File sizes
 
@@ -263,3 +263,7 @@ Don't overload your database with indexes.
 - Create issues when a bug is discovered, and use labels to describe its progress
 
 Label naming: https://github.com/dotnet/roslyn/wiki/Labels-used-for-issues
+
+## Projects with different technologies
+
+When developing a project that involves different programming languages, like PHP + Python, or multiple related projects that share some configuration, create a simple text file (in json format, for example).
