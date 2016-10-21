@@ -25,7 +25,7 @@ rough priority order):
 ### Indent style
 
  * Use IDE default configuration, instead of your preferences, to be able to setup the source code in any other environment.
- * If there are multiple IDEs (developing for PHP, using Eclipse, Netbeans, PHPStorm...), use tabs, not spaces. Configure tab size as you wish, so other developers could choose their own tab size without modifying source code.
+ * If there are multiple IDEs (developing for PHP, using Eclipse, Netbeans, PHPStorm...), use spaces.
  * When writing XML files (like Android layouts), use the auto-indent tool to sort attributes and indent nodes.
 
 ### Whitespace
